@@ -96,6 +96,7 @@ $ kill -9 `cat /tmp/pm2-gui.pid`
   * iron-node
   * xsel (pour xsel --clipboard : copie dans le presse papier)
   * toilet & figlet http://www.cyberciti.biz/faq/create-large-colorful-text-banner-on-screen/
+  * [screen](http://www.it-connect.fr/attacher-et-detacher-un-terminal-avec-la-commande-screen/)
 
 
 * dev
