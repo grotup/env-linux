@@ -1,0 +1,31 @@
+##### Header / Entête
+
+Le header à un format spécial qui inclut un type, un scope et un sujet. Le header est obligatoire, mais le scope est optionnel. Il reste préférable de l'ajouter puisqu'il ajoute un élément de compréhension non négligeable : l'emplacement de la modification.
+Il est préférable ne pas dépasser 80 caractères afin d'éviter d'afficher un message tronqué dans l'interface Gitlab.
+
+
+##### Type
+
+Le type doit être sélectionné parmi :
+
+* feat: A nouvelle feature/fonctionnalité
+* fix: Un bug fix
+* docs: Un changement de documentation
+* style: Un changement qui n'affecte pas le sens du code (espace, formatage, ajout d'un commentaire pour passer la QA, etc...)
+* refactor: Un changement qui n'est ni une correction, ni une nouvelle fonctionnalité
+* perf: Un changement qui améliore les performances
+* test: Un ajout de tests unitaire
+* chore: Un changement dans le processus de build, ou dans la gestion de dépendances
+* design: Un changement concernant le design (css, images) 
+
+##### Scope
+Le scope indique l'emplacement du changement lié au commit.
+
+##### Sujet
+Le sujet contient une description succincte du changement. Pour les projets techniques, le sujet peut-être rédigé en français ou en anglais. Pour les projets métiers (à valeur fonctionnelle pour le client), il est uniquement rédigé en français.
+
+##### Corps
+Le corps du message contient la motivation du changement, une explication plus détaillé des modifications.
+
+##### Footer
+Le footer contient les liens vers les ressources internes (JIRA, contrat, etc) et externes (RFC, Docs, etc).

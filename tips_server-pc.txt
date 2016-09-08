@@ -1,0 +1,77 @@
+mps ==> lecteur audio en ligne de commande
+
+https://github.com/sindresorhus/trash --> a la place de rm
+
+dmesg | grep -i sata | grep 'link up' ==> vitesse de transfert d’un disque ou des disques SATA branchés
+sudo hdparm -t -T /dev/sda ==> vitesse de lecture d’un disque -t : connaître la vitesse de lecture depuis le cache et -T : connaître la vitesse de lecture en accès direct
+############################################### Attention : Intel conseille de limiter la tension des barrettes mémoires à 1,65 V. Pensez à vérifier la tension de fonctionnement de vos barrettes avant tout
+############################################### installation. #######################################################################################################
+Supprimer toute trace du package précédement installé
+#Lorsque vous décidez de retirer un package de votre Debian GNU/Linux APT n'efface par les fichiers de configuration de ce package. Ceci permet de réinstaller plus rapidement la package. Cependant si vous souhaitez faire table rase et ne plus entendre parler du package, vous pouvez ajouter l'option --purge lors de la suppression.
+# apt-get remove --purge <package>
+
+# Mails server-pc
+free.serverpc@free.fr
+server.pc.elb@gmail.com
+
+perl -MCPAN -e 'CPAN::Shell->notest(install => CPAN::Shell->r)'
+
+
+
+
+# Montage et démontage de pc-erwan
+sudo mount -t cifs -o username=erwan,password='Polajod7',rw,iocharset=utf8,file_mode=0777,dir_mode=0777 //192.168.0.43/Donnees_2 /media/windows/Donnees_2
+sudo mount -t cifs -o username=erwan,password='Polajod7',rw,iocharset=utf8,file_mode=0777,dir_mode=0777 //192.168.0.43/Donnees_3 /media/windows/Donnees_3
+sudo mount -t cifs -o username=erwan,password='Polajod7',rw,iocharset=utf8,file_mode=0777,dir_mode=0777 //192.168.0.43/Donnees_6 /media/windows/Donnees_6
+
+sudo umount /media/windows/Donnees_2
+sudo umount /media/windows/Donnees_3
+sudo umount /media/windows/Donnees_6
+
+padre --> IDE PERL
+
+hollywood
+
+
+iftop
+
+htop
+atop
+http://www.linuxpedia.fr/doku.php/commande/htop_atop
+
+
+
+# RSYNC
+# -r recursive
+# -t preserve modification times
+# -p preserve permissions
+# -o preserve owner (super-user only)
+# -g preserve group
+# -v verbose
+# -h output numbers in a human-readable format
+# --progress show progress during transfer
+# -s
+rsync -r -t -p -o -g -v -h --progress --delete -s /media/windows/Donnees_6/test_save_lubuntu /media/partage/Donnees_4/test_sauvegarde_pc-erwan
+rsync -r -t -p -o -g -v -h --progress -s /media/windows/Donnees_6/test_save_lubuntu /media/partage/Donnees_4/test_sauvegarde_pc-erwan
+#rsync -r -n -t -p -o -g -v -h --progress --delete -s /media/windows/Donnees_6/test_save_lubuntu /media/partage/Donnees_4/test_sauvegarde_pc-erwan
+
+# Sauvegarde photos !
+rsync -r -t -p -o -g -v -h --progress -s /media/windows/Donnees_2/Mes\ images/Photos\ et\ videos\ maison/ /media/partage/Donnees_4/Sauvegarde/Images
+
+#Autres options possibles :
+#       --delete                delete extraneous files from dest dirs
+#       -n simulate
+
+# iptables -L --line-number
+
+glances -e ==> monitoring
+fslint ==> recherche de doublons
+fdupes : http://la-vache-libre.org/fdupes-un-outil-en-ligne-de-commande-sympa-pour-detecter-les-doublons-sur-vos-supports-de-stockages/
+
+
+# Pour passer le clavier en AZERTY de façon permanente, entrez la commande suivante :
+$ sudo dpkg-reconfigure keyboard-configuration
+# Selectionnez “Generic 105-key (Intl) PC“, puis “French” deux fois. La requête suivante concerne la touche spéciale AltGr : sélectionnez “The default for the keyboard layout” puis “no compose key“. Votre clavier est maintenant en AZERTY et le restera même après un redémarrage.
+
+xtightvncviewer 192.168.0.41:1
+
