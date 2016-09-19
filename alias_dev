@@ -1,0 +1,115 @@
+####################### ALIAS DEVELOPPEMENT #######################
+
+# netdata
+alias netdata='sudo /usr/sbin/netdata -p 2020 && gnome-open "http://127.0.0.1:2020/" 2>/dev/null &'
+alias netdata.kill='sudo pkill netdata'
+
+# change directories
+alias cd.repository='cd $HOME/sources/Repository'
+
+alias cd.nodejs='cd.repository && cd nodejs'
+alias cd.intranet='cd.repository && cd intranet'
+alias cd.contract='cd.repository && cd contract'
+alias cd.ansible='cd.repository && cd ansible'
+alias cd.java='cd.repository && cd java'
+alias cd.seed='cd.repository && cd seed'
+alias cd.angular='cd.repository && cd angular'
+alias cd.personnalisation-client='cd.repository && cd personnalisation-client'
+alias cd.referentielpresentation='cd.nodejs && cd referentiel-presentation'
+
+# npm
+alias npm.install.update='npm install && npm update'
+alias bower.install.update='bower install && bower update'
+alias npm.bower.install.update='npm.install.update && bower.install.update'
+
+# MAJ projets
+alias dossiers-financement-ux.maj='cd.angular && cd dossiers-financement-ux && git pull && '
+
+# gulp
+#alias gulp4='node_modules/gulp/bin/gulp.js'
+alias gulp.tasks.simple='gulp --tasks-simple'
+
+#ssh
+alias sshcopy='ssh-copy-id -i ~/.ssh/id_rsa.pub'
+# X for X11
+alias ssh.server-pc='ssh erwan@78.221.72.68 -p 2483 -X'
+# crpldeva
+alias ssh.crpldeva.front.exposervice='ssh root@92.222.20.203 -p 22'
+alias ssh.crpldeva.front.serveurannexe='ssh root@37.59.123.1 -p 22'
+alias ssh.crpldeva.back.exposervice='ssh root@37.59.123.15 -p 22'
+alias ssh.crpldeva.back.serveurannexe='ssh root@37.187.238.194 -p 22'
+# crpldevb
+alias ssh.crpldevb.front.exposervice='ssh root@5.196.17.7 -p 22'
+alias ssh.crpldevb.front.serveurannexe='ssh root@151.80.141.32 -p 22'
+alias ssh.crpldevb.back.exposervice='ssh root@92.222.38.121 -p 22'
+alias ssh.crpldevb.back.serveurannexe='ssh root@92.222.47.210 -p 22'
+# crpltest
+alias ssh.crpltest.front.exposervice='ssh root@92.222.2.44 -p 22'
+alias ssh.crpltest.front.serveurannexe='ssh root@92.222.2.54 -p 22'
+alias ssh.crpltest.back.exposervice='ssh root@37.59.123.10 -p 22'
+alias ssh.crpltest.back.serveurannexe='ssh root@37.59.123.21 -p 22'
+# crpldevn
+alias ssh.crpldevn.front.exposervice='ssh root@151.80.141.63 -p 22'
+alias ssh.crpldevn.front.serveurannexe='ssh root@151.80.141.62 -p 22'
+alias ssh.crpldevn.back.exposervice='ssh root@151.80.141.54 -p 22'
+alias ssh.crpldevn.back.serveurannexe='ssh root@151.80.141.55 -p 22'
+
+# mongo
+alias mongo.start='sudo service mongodb start'
+alias mongo.stop='sudo service mongodb stop'
+alias mongo.restart='sudo service mongodb restart'
+alias mongo.log='cat /var/log/mongodb/mongodb.log'
+
+# git
+alias git.count='git shortlog -sn'
+alias git.alias='git config --get-regexp alias'
+alias git.clone.develop='git clone --branch develop'
+alias git.conventions='cat ~/$REPOENV/git-conventions.txt'
+alias git.conventions.browser='gnome-open "http://gitlab.mgdis.fr/qa/git-conventions#type" 2>/dev/null &'
+alias git.pull.push='git pull && git push'
+alias git.info='git remote show origin'
+alias git.url.origin='git config --get remote.origin.url'
+
+# cd.repository && ls -l | grep -E  ^d | awk -F' ' '{print "alias git.pull." $9 "=\x27git.pull.repo.param " $9 "\x27" }'
+# cd.repository && ls -1d */ | cut -d'/' -f1
+alias git.pull.angular='git.pull.repo.param angular'
+alias git.pull.ansible='git.pull.repo.param ansible'
+alias git.pull.contract='git.pull.repo.param contract'
+alias git.pull.dotnet='git.pull.repo.param dotnet'
+alias git.pull.externe='git.pull.repo.param externe'
+alias git.pull.intranet='git.pull.repo.param intranet'
+alias git.pull.java='git.pull.repo.param java'
+alias git.pull.nodejs='git.pull.repo.param nodejs'
+alias git.pull.personnalisation-client='git.pull.repo.param personnalisation-client'
+alias git.pull.seed='git.pull.repo.param seed'
+alias git.pull.temp='git.pull.repo.param temp'
+alias git.pull.web-session='git.pull.repo.param web-session'
+
+### tomcat7 ###
+# service
+alias tomcat7.status='sudo service tomcat7 status'
+alias tomcat7.start='sudo service tomcat7 start'
+alias tomcat7.stop='sudo service tomcat7 stop'
+alias tomcat7.restart='sudo service tomcat7 restart'
+alias tomcat7.cd.log='cd /var/log/tomcat7'
+alias tomcat7.cd.webapps='cd ~/TRAVAIL/webapps'
+
+# JIRA
+alias jira.assigned='jira assigned'
+alias jira.dashboard='jira dashboard'
+
+# docker
+alias docker.ps='docker ps -a'
+alias docker.images='docker images'
+#alias docker-compose='sudo docker-compose'
+# docker app
+alias docker.dockerui.start='docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock dockerui/dockerui'
+alias docker.atom.start='cd $HOME && docker run -d -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/shm:/dev/shm -v ${PWD}/.atom:/.atom -e DISPLAY=${DISPLAY} jamesnetherton/docker-atom-editor && cd $OLDPWD'
+
+# Applications
+alias opencmis='/home/elb/Applications/opencmis/workbench.sh &'
+alias eclipse='eclipse 2>/dev/null &'
+alias sts='sts 2>/dev/null &'
+alias VSCode='code 2>/dev/null &'
+alias ungit='ungit 2>/dev/null  &'
+

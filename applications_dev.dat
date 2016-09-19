@@ -1,0 +1,12 @@
+#applications_dev.dat
+mocha
+maildev
+docker
+sts
+ungit
+git
+bower
+npm
+node (nvm)
+jscs
+netdata (github)

@@ -1,0 +1,92 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias la='ls -lha'
+alias ll='ls -alrth'
+alias lt='ls -lrth'
+alias p="pwd"
+alias l='ls -lh'
+alias dir='ls -ahl | grep ^d'
+alias cd..='cd ..'
+alias cd....='cd ../..'
+alias cd.env-linux='cd ~/$REPOENV'
+# bashrc
+alias subl.bashrc='subl ~/.bashrc'
+alias subl.zshrc='subl ~/.zshrc'
+alias subl.gitconfig='subl ~/.gitconfig'
+
+# Autres
+alias h.50='history 50'
+alias ps.grep='ps aux | grep -v grep | grep '
+alias :q!='echo T''es pas dans vi bitch'
+alias :wq!='echo T''es pas dans vi bitch'
+
+# search
+alias du.here='du -hsc'
+alias search.backup='sudo find -regex "^.*~$"'
+alias search.backup.and.delete='sudo find -regex "^.*~$" -exec sudo rm -i {} \;'
+
+#kill
+alias chrome.kill='kill -SIGSTOP $(pidof chrome)'
+
+# TODO A revoir
+alias explorer='nautilus'
+
+# Système (de server-pc)
+#alias temp='sudo hddtemp /dev/sda* ; echo "————————–" ; sensors'
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# system
+alias system.version='cat /etc/lsb-release'
+alias system.list.service='service --status-all'
+alias system.list.program='dpkg -l'
+alias system.ip.public='curl ifconfig.me'
+alias system.ip.local='ifconfig eth0 | grep "inet adr:" | cut -d: -f2 | awk "{ print $1}"'
+alias system.ps.cpu.max='ps -eo pmem,pcpu,pid,args | tail -n +2 | sort -rnk 2 | head'
+alias system.maj='sudo apt-get -y update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade'
+alias system.list.partitions='sudo fdisk -l ; echo "————————–" ; sudo parted -l ; echo "————————–" ; df -aTh ; echo "————————–" ; free -m ; echo "————————–" ; ls -l /dev/disk/by-label/'
+alias system.heure='watch -n1 "banner \$(date +"%H:%M:%S")"'
+alias system.encodage.terminal='echo $LC_CTYPE'
+# alias system.reload.env.elb='. ~/env-linux/load.sh' ==> fonction bash tools.sh
+alias system.reload.shell='exec $SHELL -l'
+
+# reboot / halt / poweroff
+alias power.reboot='sudo /sbin/reboot'
+alias power.poweroff='sudo /sbin/poweroff'
+alias power.halt='sudo /sbin/halt'
+alias power.shutdown='sudo /sbin/shutdown'
+
+# tips, tools...
+#alias tips='cat ~/$REPOENV/tips.txt'
+# TODO A revoir
+#alias tips='gnome-open "http://gitlab.mgdis.fr/lebideau-e/env-linux/blob/master/tips.md" 2>/dev/null &'
+alias git.cheat='gnome-open "https://training.github.com/kit/downloads/fr/github-git-cheat-sheet.pdf" 2>/dev/null &'
+alias todo='. ~/$REPOENV/TODO.sh'
+alias bash.cheat='gnome-open $TOOLS/bash_cheat_sheet.pdf 2>/dev/null &'
+alias alias.list='cat $HOME/$REPOENV/aliases.sh | grep -i "^alias" | cut -c7- | cut -d"=" -f1'
+alias meteo='curl wttr.in/Auray'
+alias tools.count.file='find */ | cut -d/ -f1 | uniq -c | sort -rn'
+
+alias color.cara="grep ^Cara $HOME/$REPOENV/colors.sh"
+
+# mountss
+#alias mount.music='sudo mount -t cifs //172.16.10.92/Musique/ /media/lebideau-e/Musique -o uid=lebideau-e,gid=lebideau-e,username=lebideau-e,password=Mgdis19,domain=OCEANIE'
+#alias mount.travail='sudo mount -t cifs //172.16.10.92/TRAVAIL/ /media/lebideau-e/Travail -o uid=lebideau-e,gid=lebideau-e,username=lebideau-e,password=Mgdis19,domain=OCEANIE'
+#alias mount.tomcat7='sudo mount -t cifs //172.16.10.92/tomcat7/ /media/lebideau-e/Tomcat7 -o uid=lebideau-e,gid=lebideau-e,username=lebideau-e,password=Mgdis19,domain=OCEANIE'
+#alias mount.lebideau-e='mount.music && mount.travail && mount.tomcat7'
+#alias umount.music='sudo umount /media/lebideau-e/Musique'
+#alias umount.travail='sudo umount /media/lebideau-e/Travail'
+#alias umount.tomcat7='sudo umount /media/lebideau-e/Tomcat7'
+#alias umount.lebideau-e='umount.music && umount.travail && umount.tomcat7'
+
+
+echo "${Green}aliases.sh load!${Color_off}"
