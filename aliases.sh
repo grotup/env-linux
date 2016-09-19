@@ -40,6 +40,9 @@ alias subl.gitconfig='subl ~/.gitconfig'
 # Autres
 alias h.50='history 50'
 alias ps.grep='ps aux | grep -v grep | grep '
+alias :q!='echo T''es pas dans vi bitch'
+alias :q!='echo T''es pas dans vi bitch'
+alias :wq!='echo T''es pas dans vi bitch'
 
 # search
 alias du.here='du -hsc'
